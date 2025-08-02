@@ -1,86 +1,65 @@
 # Vraag 1
-
-# print("We like Python!")
-# print("We like Python!")
-# print("We like Python!")
-# print("We like Python!")
-# print("We like Python!")
+# for i in range(1,6):
+#     print(i)
+# print("Goodbye!")
 
 # Vraag 2
-# n=5
-# i=0
-# while i<n:
-#     print("We like Python!")
-#     i=i+1
+# for i in range(5,0,-1):
+#     print(i)
+# print("Goodbye!")
 
 # Vraag 3
-# a=int(input("Enter a: "))
-# if a>0:
-#     print(a)
-# else:
-#     a=-a
-#     print(a)
+# for i in range(3,16,3):
+#     print(i)
+# print("Goodbye!")
 
 # Vraag 4
-# n=6
-# i=1
-# while i<n:
+# values = [12, 10, 32, 3, 66, 17, 42, 99, 20]
+# for i in values:
 #     print(i)
-#     i=i+1
-# print("Goodbye!")
 
 # Vraag 5
-# n=0
-# i=5
-# while i>n:
-#     print(i)
-#     i=i-1
-# print("Goodbye!")
+# values = [12, 10, 32, 3, 66, 17, 42, 99, 20]
+# for i in values:
+#     print(i**2)
 
 # Vraag 6
-# from math import *
-# a=int(input("Enter a: "))
-# b=int(input("Enter b: "))
-# c=sqrt((a**2)+(b**2))
-# print(c)
+# values = [12, 10, 32, 3, 66, 17, 42, 99, 20]
+# result=0
+# for i in values:
+#     result+=i
+# print(result)
 
-# Vraag 7 and # Vraag 8
-# punt = int(input("Geef een punt op tussen 0 en 100 (incl.)"))
-# if punt>=90:
-#     print("grootste onderscheiding en de gelukwensen van de examencommissie")
-# elif punt>=85 and punt<90:
-#     print("grootste onderscheiding")
-# elif punt>=77 and punt<85:
-#     print("grote onderscheiding")
-# elif punt>=68 and punt<77:
-#     print("onderscheiding")
-# elif punt>=50 and punt<68:
-#     print("op voldoende wijze")
-# elif punt<50:
-#     print("onvoldoende")
+# Vraag 7
+# values = [12, 10, 32, 3, 66, 17, 42, 99, 20]
+# result=values[0]
+# for i in values[1:]:
+#     result*=i
+# print(result)
 
-# Vraag 9 and # Vraag 10
-# jaar = int(input("Geef een jaar op"))
-# if jaar%4==0 and jaar%100!=0:
-#     print("--schrikkeljaar--")
-# elif jaar%400==0:
-#     print("--schrikkeljaar--")
-# else:
-#     print("--geen schrikkeljaar--")
+# Vraag 8
+# hotel = [4, 5, 2, 4, 5, 2]
+# result=0
+# for i,j in enumerate(hotel):
+#     if i%2!=0:
+#         result+=j
+# print(result)
 
+# Vraag 9
+# for i in range(5):
+#     print("We like Python!")
+
+# Vraag 10
+# aantalZinnen=int(input("Enter aantalZinnen: "))
+# reallyWoord=int(input("Enter reallyWoord: "))
+# temp=reallyWoord*"really "
+# for i in range(aantalZinnen):
+#     print(f"We {temp}like Python!")
 
 # Vraag 11
-# uur = int(input("Hoe laat is het nu (in uren)?"))
-# x = int(input("Hoeveel uur verder wil je?"))
-# print((uur+x)%24)
-
-# Vraag 12
-# epsilon=0.0000001
-# n=1
-# while True:
-#     waarde=n(n+1)
-#     verschil=n-waarde
-#     if verschil<epsilon:
-#         print("n= ",n)
-#         break
-#     n+=1
+# aantalZinnen=int(input("Enter aantalZinnen: "))
+# reallyWoord=int(input("Enter reallyWoord: "))
+# lijst=["really"] * reallyWoord
+# temp=", ".join(lijst)
+# for i in range(aantalZinnen):
+#     print(f"We {temp} like Python!")
