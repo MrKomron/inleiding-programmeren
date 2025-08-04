@@ -1,105 +1,100 @@
 # Vraag 1
-# def integer_division(deeltal, deler):
-#     """
-#         doe de gehele deling van deeltal door deler
-#     """
-#     quotient = 0
-#     while deeltal >= deler:
-#         quotient += 1
-#         deeltal -= deler
-#
-#     return quotient
-#
-# print(integer_division(7, 3))
-# print(integer_division(123, 5))
-# print(integer_division(0, 7))
-# print(integer_division(7, 7))
-# print(integer_division(15, 7))
-import math
-# Vraag 2
-# from math import pi
-# def area_of_circle(r):
-#     area=pi*r**2
-#     return area
+# def hms(n):
+#     uur=n//3600
+#     rest=n%3600
+#     minuten=rest//60
+#     seconden=rest%60
+#     l=[uur,minuten,seconden]
+#     return l
 
+# Vraag 2
+# def tijdNaarSeconden(uur,minuten,seconden):
+#     result=seconden+(minuten*60)+(uur*3600)
+#     return result
+# print(tijdNaarSeconden(1,0,1))
+# print(tijdNaarSeconden(0,1,40))
 
 # Vraag 3
-# def is_priem(x):
-#     if x<2:
-#         return False
-#     for i in range(2,int(x**0.5)+1):
-#         if x%i==0:
-#             return False
-#     return True
-# print(is_priem(5))
+def faculteit(n):
+    result=1
+    for i in range(1,n+1):
+        result*=i
+    return result
+# print(faculteit(5))
 
 # Vraag 4
-# def volgend_priemgetal(x):
-#     x+=1
-#     while not is_priem(x):
-#         x+=1
-#     return x
-
+# def variatie(n,k):
+#     result=int(faculteit(n)/faculteit((n-k)))
+#
+#     return result
+# print(variatie(4,1))
+# print(variatie(5,2))
+# print(variatie(6,3))
 
 # Vraag 5
-# from math import pi
-# def degToRad(n):
-#     result=n*(pi/180)
+# def combinatie(n,k):
+#     result=int(faculteit(n)/(faculteit(k)*faculteit(n-k)))
 #     return result
+# print(combinatie(4, 1))
+# print(combinatie(5, 2))
+# print(combinatie(6, 3))
 
 # Vraag 6
-# def priemfactoren(x):
-#     l=[]
-#     deler=2
-#     while x>1:
-#         if x%deler==0:
-#             l.append(deler)
-#             x//=deler
-#         elif x%deler!=0:
-#             deler+=1
-#     return l
-
-
+# def remove_multiples(l,n):
+#     for i in l[:]:
+#         if i%n==0:
+#             l.remove(i)
 
 # Vraag 7
-# def gemiddelde_lijst(lijst):
-#     if len(lijst)==0:
-#         return None
-#     totaal = 0
-#     for i in lijst:
-#         print(i)
-#         totaal += i
-#
-#     gemiddelde = totaal / len(lijst)
-#     return gemiddelde
-#
-# print(gemiddelde_lijst([1,2,3,4]))
-# print(gemiddelde_lijst([3,2,3,4]))
-# print(gemiddelde_lijst([]))
+# def remove_multiples(l,n):
+#     nieuw_list=[]
+#     for i in l:
+#         if i%n!=0:
+#             nieuw_list.append(i)
+#     return nieuw_list
+# print(remove_multiples([1,2,3,4,5,6],5))
 
 # Vraag 8
-# def reverse(n):
-#     result=n[::-1]
-#     return result
-#
-# print(reverse("happy"))
-
-# Vraag 9
-# def is_palindrome(n):
-#     result=n[::-1]
-#     if n==result:
+# def even(n):
+#     if n%2==0:
 #         return True
 #     return False
-#
-# print(is_palindrome("happy"))
-# print(is_palindrome("non"))
+
+# Vraag 9
+def piramide(n):
+    result=""
+    for i in range(1,n+1):
+        prefix=" "*(n-i)
+        numbers =" ".join(str(x) for x in range(1,2*i))
+        result+=prefix+numbers+"\n"
+    print()
+    return result.rstrip()
+print(piramide(4))
+print()
+print(piramide(5))
+
+def piramide(n):
+    for i in range(n):
+        print(" "*(n-i-1),end="")
+        for j in range(2*i+1):
+            print(j+1,end=" ")
+        print()
 
 # Vraag 10
-# def difference(l1,l2):
-#     l=[]
-#     for i in l1:
-#         if i not in l2:
-#             l.append(i)
-#     return l
+# def som_veelvouden(n):
+#     result=0
+#     for i in range(1,n):
+#         if i%3==0 or i%5==0:
+#             result+=i
+#     return result
 #
-# print(difference([7,2,1] , [3,2]))
+# print(som_veelvouden(9))
+
+# Vraag 11
+# def som_veelvouden(getal1, getal2, bovengrens):
+#     result=0
+#     for i in range(1,bovengrens):
+#         if i%getal1==0 or i%getal2==0:
+#             result+=i
+#     return result
+
