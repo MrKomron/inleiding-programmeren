@@ -1,100 +1,169 @@
 # Vraag 1
-# def hms(n):
-#     uur=n//3600
-#     rest=n%3600
-#     minuten=rest//60
-#     seconden=rest%60
-#     l=[uur,minuten,seconden]
-#     return l
+# def midden(p1,p2):
+#     result=((p1[0]+p2[0])/2,(p1[1]+p2[1])/2)
+#     return result
 
 # Vraag 2
-# def tijdNaarSeconden(uur,minuten,seconden):
-#     result=seconden+(minuten*60)+(uur*3600)
-#     return result
-# print(tijdNaarSeconden(1,0,1))
-# print(tijdNaarSeconden(0,1,40))
+# def midden(A,B):
+#     temp_result=[]
+#     for a,b in zip(A,B):
+#         temp_result.append((a+b)/2)
+#     return tuple(temp_result)
 
 # Vraag 3
-def faculteit(n):
-    result=1
-    for i in range(1,n+1):
-        result*=i
-    return result
-# print(faculteit(5))
+# def tel_getallen(l):
+#     max_getal = max(l)
+#     frequenties = [0] * (max_getal + 1)  # Maak lijst van nullen
+#     for getal in l:
+#         frequenties[getal] += 1  # Verhoog de teller op de juiste plek
+#     return frequenties
+#
+# l = [1, 2, 5, 3, 2, 17, 5, 6, 7, 3, 2, 1, 9, 3]
+# frequenties = tel_getallen(l)
+# print(frequenties)
 
 # Vraag 4
-# def variatie(n,k):
-#     result=int(faculteit(n)/faculteit((n-k)))
+# from alice_book import book
+# def tel_woorden(l):
+#     result={}
+#     teller=0
+#     for i in l:
+#         if i not in result:
+#             result[i]=1
+#         else:
+#             result[i]+=1
 #
 #     return result
-# print(variatie(4,1))
-# print(variatie(5,2))
-# print(variatie(6,3))
+#
+# woorden = book.split()
+# print(tel_woorden(woorden))
 
 # Vraag 5
-# def combinatie(n,k):
-#     result=int(faculteit(n)/(faculteit(k)*faculteit(n-k)))
-#     return result
-# print(combinatie(4, 1))
-# print(combinatie(5, 2))
-# print(combinatie(6, 3))
+# def print_frequenties(dict):
+#     for woord,aantal in dict.items():
+#         print(woord, aantal)
 
 # Vraag 6
-# def remove_multiples(l,n):
-#     for i in l[:]:
-#         if i%n==0:
-#             l.remove(i)
+def list2dict(l1,l2):
+    result={}
+    for key,value in zip(l1,l2):
+        if len(l1)==len(l2):
+            result[key]=value
+        else:
+            return None
+    return result
+
+print(list2dict(['Ten', 'Twenty', 'Thirty'],[10, 20, 30]))
+print(list2dict(['Ten', 'Twenty', 'Thirty'],[10, 20]))
+print(list2dict(['Ten', 'Ten', 'Thirty'],[10, 20]))
+print(list2dict([1,2,3,4],[5,6,7,8]))
 
 # Vraag 7
-# def remove_multiples(l,n):
-#     nieuw_list=[]
-#     for i in l:
-#         if i%n!=0:
-#             nieuw_list.append(i)
-#     return nieuw_list
-# print(remove_multiples([1,2,3,4,5,6],5))
+# def bepaal_winnaar(data):
+#     counter=None
+#     winnaar=None
+#     for key, value in data.items():
+#         som=sum(value)
+#         if counter is None or som<counter:
+#             counter=som
+#             winnaar=key
+#     return winnaar
+#
+# punten = { "Calders": [2, 4, 3, 2, 3, 4, 4, 4, 3, 3], # Som is 32
+#            "Hofkens": [3, 3, 2, 4, 2, 4, 3, 3, 4, 3], # Som is 31
+#            "Laenens": [2, 3, 4, 2, 3, 4, 4, 3, 4, 3], # Som is 32
+#            "Symens": [2, 3, 2, 4, 2, 2, 3, 2, 2, 4] }# Som is 26 }
+# print(bepaal_winnaar(punten))
 
 # Vraag 8
-# def even(n):
-#     if n%2==0:
-#         return True
-#     return False
+# def tel_elementen(l):
+#     return len(set(l))
+
 
 # Vraag 9
-def piramide(n):
-    result=""
-    for i in range(1,n+1):
-        prefix=" "*(n-i)
-        numbers =" ".join(str(x) for x in range(1,2*i))
-        result+=prefix+numbers+"\n"
-    print()
-    return result.rstrip()
-print(piramide(4))
-print()
-print(piramide(5))
-
-def piramide(n):
-    for i in range(n):
-        print(" "*(n-i-1),end="")
-        for j in range(2*i+1):
-            print(j+1,end=" ")
-        print()
+# def is_priem(getal):
+#     if getal < 2:
+#         return False
+#     for i in range(2, int(getal**0.5)+1):
+#         if getal % i == 0:
+#             return False
+#     return True
+#
+# def volgend_priemgetal(getal):
+#     volgende = getal + 1
+#     while not is_priem(volgende):
+#         volgende += 1
+#     return volgende
+#
+#
+# def priemgetallen(n):
+#     start=2
+#     result=[]
+#     while len(result)<n:
+#         if is_priem(start):
+#             result.append(start)
+#         start+=1
+#     return result
 
 # Vraag 10
-# def som_veelvouden(n):
-#     result=0
-#     for i in range(1,n):
-#         if i%3==0 or i%5==0:
-#             result+=i
+# def fibonacci(n):
+#     result=[1,1]
+#     new_item=0
+#     while len(result)<n:
+#         new_item=result[-1]+result[-2]
+#         result.append(new_item)
 #     return result
-#
-# print(som_veelvouden(9))
+# print(fibonacci(6))
 
 # Vraag 11
-# def som_veelvouden(getal1, getal2, bovengrens):
-#     result=0
-#     for i in range(1,bovengrens):
-#         if i%getal1==0 or i%getal2==0:
-#             result+=i
-#     return result
+# def priem_en_fib(n):
+#     return set(priemgetallen(n)) & set(fibonacci(n))
 
+# Vraag 12
+# def priem_of_fib(n):
+#     return set(priemgetallen(n)) | set(fibonacci(n))
+
+# Vraag 13
+# def priem_xof_fib(n):
+#     return set(priemgetallen(n)) ^ set(fibonacci(n))
+
+# Vraag 14
+# Function to add a new task
+# def add_task(tasks, task):
+#     tasks.append(task)
+#
+# # Function to update a task's status
+# def update_task(tasks, task, status):
+#     for t in tasks:
+#         if t['name'] == task:
+#             t['status'] = status
+#
+# # Function to print all pending tasks
+# def print_pending_tasks(tasks):
+#     pending_tasks = []
+#     for task in tasks:
+#         if task['status'] == 'pending':
+#             print(task['name'])
+#
+# # Function to check if a task is complete
+# def is_task_complete(tasks, task):
+#     for t in tasks:
+#         if t['name'] == task:
+#             return t['status'] == 'complete'
+#     return None
+#
+# tasks = []
+# # Adding tasks
+# add_task(tasks, {'name': 'Task 1', 'status': 'pending'})
+# add_task(tasks, {'name': 'Task 2', 'status': 'complete'})
+# add_task(tasks, {'name': 'Task 3', 'status': 'pending'})
+#
+# print_pending_tasks(tasks)
+#
+# update_task(tasks, 'Task 1', 'complete')
+#
+# print_pending_tasks(tasks)
+#
+# print("Is Task 1 complete?", is_task_complete(tasks, 'Task 1'))
+# print("Is Task 3 complete?", is_task_complete(tasks, 'Task 3'))
+# print("Is Task 4 complete?", is_task_complete(tasks, 'Task 4'))
