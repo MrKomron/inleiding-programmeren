@@ -21,6 +21,23 @@ class Point:
         b=other.y-a*other.x
         return (a,b)
 
+class Rectangle:
+    def __init__(self, corner, width, height):
+        self.corner=corner
+        self.width=width
+        self.height=height
+    def area(self):
+        result=self.width*self.height
+        return result
+
+    def equals(self,other):
+        if self.width==other.width and self.height==other.height and self.corner.x==other.corner.x and self.corner.y==other.corner.y:
+            return True
+        else:
+            return False
+
+
+
 
 
 
